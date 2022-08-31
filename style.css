@@ -3,3 +3,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  height: 100vh;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: 600px;
+  width: 600px;
+  border: 2px solid black;
+}
+.child {
+  border: 1px solid black;
+}
+.child:hover {
+  background-color: black;
+}
