@@ -24,6 +24,7 @@ body {
   height: 600px;
   width: 600px;
   border: 1px solid black;
+  transition: all 0.3s;
 }
 .child {
   border: 1px solid black;
