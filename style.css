@@ -127,4 +127,5 @@ label {
 #rangeOutput:focus {
   outline: none;
   border: none;
+  background-color: rgb(126, 96, 157);
 }
