@@ -39,5 +39,5 @@ function updateGridSize(size) {
   gridSize.innerHTML = `${size} x ${size}`;
 }
 
-calling the default grid
+//calling the default grid
 gridGenerator(16);
