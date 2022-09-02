@@ -5,7 +5,7 @@ const rangeValue = document.querySelector(".grid-size");
 const gridSize = document.querySelector("h2");
 rangeValue.onchange = (e) => {
   //clear the grid for a new one
-  clearGrid();
+  container.innerHTML = "";
   ///generating new grid
   gridGenerator(e.target.value);
 };
@@ -26,16 +26,6 @@ function gridGenerator(size) {
     });
   }
   //displaying the grid size
-  updateGridSize(size);
-}
-
-//clearing the grid
-function clearGrid() {
-  container.innerHTML = "";
-}
-
-//updating the grid size display
-function updateGridSize(size) {
   gridSize.innerHTML = `${size} x ${size}`;
 }
 
