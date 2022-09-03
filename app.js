@@ -9,9 +9,11 @@ const btnEreaser = document.querySelector(".btn-erease");
 const colorPicker = document.querySelector("#color-picker");
 
 //sliding the slider
-rangeValue.onchange = (e) => {
+rangeValue.oninput = (e) => {
   //clear the grid for a new one
   container.innerHTML = "";
+  gridSize.innerHTML = this.value;
+
   ///generating new grid
   gridGenerator(e.target.value);
 };
