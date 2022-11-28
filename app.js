@@ -1,22 +1,16 @@
 "use strict";
 const container = document.querySelector(".container");
-const rangeValue = document.querySelector(".grid-size");
 const gridSize = document.querySelector("h2");
-const btnRGB = document.querySelector(".btn-rgb");
-const btnReset = document.querySelector(".btn-reset");
-const btnGridLine = document.querySelector(".btn-grid-line");
-const btnEreaser = document.querySelector(".btn-erease");
-const colorPicker = document.querySelector("#color-picker");
 
 //sliding the slider
-rangeValue.oninput = (e) => {
+const rangeValue = (document.querySelector(".grid-size").oninput = (e) => {
   //clear the grid for a new one
   container.innerHTML = "";
   gridSize.innerHTML = this.value;
 
   ///generating new grid
   gridGenerator(e.target.value);
-};
+});
 
 //create standart grid
 function gridGenerator(size) {
@@ -34,11 +28,13 @@ function gridGenerator(size) {
     container.appendChild(gridElement);
 
     //funciton for displaying the borders
+    const btnGridLine = document.querySelector(".btn-grid-line");
     btnGridLine.addEventListener("click", function () {
       gridElement.classList.toggle("no-border");
     });
 
     //function for colorpicker
+    const colorPicker = document.querySelector("#color-picker");
     colorPicker.addEventListener("click", function (e) {
       gridElement.addEventListener("mouseover", () => {
         gridElement.style.backgroundColor = e.target.value;
@@ -50,29 +46,30 @@ function gridGenerator(size) {
       gridElement.style.backgroundColor = "black";
     });
     //eventlistener on every child RGB
+    const btnRGB = document.querySelector(".btn-rgb");
     btnRGB.addEventListener("click", function () {
       gridElement.addEventListener("mouseover", () => {
-        gridElement.style.backgroundColor = randomColor();
+        gridElement.style.backgroundColor = "#000000".replace(
+          /0/g,
+          function () {
+            return (~~(Math.random() * 16)).toString(16);
+          }
+        );
       });
     });
     //erease your drawing
+    const btnEreaser = document.querySelector(".btn-erease");
     btnEreaser.addEventListener("click", function () {
       gridElement.addEventListener("mouseover", () => {
         gridElement.style.backgroundColor = "white";
       });
     });
     //reset your drawing
+    const btnReset = document.querySelector(".btn-reset");
     btnReset.addEventListener("click", function () {
       gridElement.style.backgroundColor = "white";
     });
   }
-}
-
-function randomColor() {
-  const r = Math.floor(Math.random() * 256);
-  const g = Math.floor(Math.random() * 256);
-  const b = Math.floor(Math.random() * 256);
-  return `rgb(${r},${g},${b})`;
 }
 
 //calling the default grid
