@@ -146,3 +146,43 @@ input[type="color"] {
 .github:hover {
   transform: scale(1.1);
 }
+.hide-game {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: wheat;
+  display: grid;
+  place-content: center;
+}
+@media (min-width: 320px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+  .hide-game {
+    display: grid;
+  }
+}
+@media (min-width: 481px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  .hide-game {
+    display: grid;
+  }
+}
+@media (min-width: 641px) {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  .hide-game {
+    display: grid;
+  }
+}
+@media (min-width: 961px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .hide-game {
+    display: none;
+  }
+}
+@media (min-width: 1025px) {
+  /* big landscape tablets, laptops, and desktops */
+  .hide-game {
+    display: none;
+  }
+}
