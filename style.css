@@ -18,6 +18,7 @@ body {
   gap: 32px;
 }
 .container {
+  cursor: crosshair;
   height: 600px;
   width: 600px;
   transition: all 0.3s;
@@ -26,7 +27,7 @@ body {
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 .child {
-  border: 1px solid black;
+  border: 1px solid rgb(0, 0, 0);
 }
 .no-border {
   border: none;
@@ -35,7 +36,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: cente r;
+  align-items: center;
   gap: 12px;
 }
 h2 {
